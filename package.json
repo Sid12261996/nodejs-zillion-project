@@ -1,0 +1,30 @@
+{
+  "name": "zillion-assignment",
+  "version": "1.0.0",
+  "description": "This is an assignment for the interview process, which I need to submit for getting shortlisted",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sid12261996/nodejs-zillion-project.git"
+  },
+  "author": "Sidharth S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sid12261996/nodejs-zillion-project/issues"
+  },
+  "homepage": "https://github.com/Sid12261996/nodejs-zillion-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "image-scraper": "^0.2.1",
+    "mongoose": "^5.6.9",
+    "multer": "^1.4.2",
+    "path": "^0.12.7"
+  }
+}

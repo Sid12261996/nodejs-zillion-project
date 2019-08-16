@@ -1,0 +1,6 @@
+{
+  "env":{
+    "MongoUrl":"mongodb+srv://MeetGDemo:MeetTeam@18@meetgdemo-kjmtn.mongodb.net/beta"
+
+  }
+}
