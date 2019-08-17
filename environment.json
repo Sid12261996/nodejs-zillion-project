@@ -1,6 +1,6 @@
 {
   "env":{
-    "MongoUrl":"mongodb+srv://MeetGDemo:MeetTeam@18@meetgdemo-kjmtn.mongodb.net/beta"
+    "MongoUrl":"mongodb+srv://sid:zillion123456@cluster0-syvnu.mongodb.net/scrapedImages?retryWrites=true&w=majority"
 
   }
 }
