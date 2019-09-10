@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc2f7876-6cff-4d95-9a72-2bb5d5b0dd84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/image-saving-model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ImagesManipulated/image-file.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Views/getAllImages.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/save-image-to-mongo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.json" beforeDir="false" afterPath="$PROJECT_DIR$/environment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fetchImages.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Views/fetchImages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ImagesManipulated/image-file.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/ImagesManipulated/image-file.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Views/getAllImages.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Views/getAllImages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save-image-to-mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/save-image-to-mongo.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,8 +88,19 @@
       <option name="presentableId" value="Default" />
       <updated>1565976320252</updated>
       <workItem from="1565976321764" duration="937000" />
-      <workItem from="1565978300641" duration="18396000" />
+      <workItem from="1565978300641" duration="31191000" />
+      <workItem from="1566208031810" duration="262000" />
+      <workItem from="1566230034240" duration="500000" />
+      <workItem from="1567792509283" duration="1127000" />
     </task>
+    <task id="LOCAL-00001" summary="Image upload to mongo, converting to greyscale, get image having some issue">
+      <created>1566030188176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566030188176</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,7 +111,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -114,5 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Image upload to mongo, converting to greyscale, get image having some issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image upload to mongo, converting to greyscale, get image having some issue" />
   </component>
 </project>

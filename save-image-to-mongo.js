@@ -14,32 +14,36 @@ const fixedImagePath = 'public/ImagesManipulated/image-file.jpg';
 //         .catch(err => console.error(err));
 // };
 
-exports.SaveImageToDB = function (image) {
-
-  return   Jimp.read(image.url).then(lenna => {
+exports.SaveImageToDB = async function (image, count) {
+    const manipulatedPath = `${fixedImagePath + count}.jpg`;
+    return Jimp.read(image.url).then(lenna => {
         return lenna
-
-
             .greyscale() // set greyscale
             .write(fixedImagePath) // save
 
-    }).catch(err => console.error(err)).then(result => {
-console.log(result,'From Jimp');
-        const singletonImage = new imageFile({
-            _id: new mongoose.Types.ObjectId(),
-            imageBinary: fs.readFileSync(fixedImagePath),
-            contentType: image.type
-        });
+    }).catch(err => {
+        console.error(err);
+        return 'failed';
+    }).then(result => {
+        console.log(manipulatedPath, 'From Jimp');
+        const singletonImage = new imageFile();
+        singletonImage._id = new mongoose.Types.ObjectId();
+
+        singletonImage.imageBinary = fs.readFileSync(fixedImagePath);
+
+
+        singletonImage.contentType = image.type;
+
 
         singletonImage.save().then(res => {
             console.log(res);
             return res;
-        }).catch(err => console.error(err,'I am error'))
+        }).catch(err => console.error(err, 'I am error'))
     });
 };
 
 exports.retrieveImage = function () {
-   return  imageFile.find().limit(3).exec().then(docs => {
+    return imageFile.find().limit(15).exec().then(docs => {
         return docs;
     })
 };

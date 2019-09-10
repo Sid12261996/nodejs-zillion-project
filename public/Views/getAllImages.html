@@ -24,19 +24,45 @@
 </head>
 <body>
 <h1>Here you see all the images</h1>
-<img src="" alt="" id="img">
-<a onclick="getAllImages()">Click Here</a>
+<!--<img src="http://localhost:3000/seeall" alt="I am Alt Text" id="img">-->
+<div id="imghere"></div>
+<button class="btn primary-btn" onclick="getAllImages()">Click Here</button>
 <script type="text/javascript">
-    function getAllImages(){
-        $(document).ready(function () {
-            $.get('/seeAll',(result,status)=>{
-                $.each(result,(item,index)=>{
-                    console.log(item,index);
-                    // $('#img').attr('src',`data:`)
-                })
-            })
-        })
+    function getAllImages() {
+        // $(document).ready( ()=> {
+        //     $.ajax({
+        //         url: '/seeAll',
+        //        success: (result) => {
+        //             console.log('On success')
+        //             // $.each(result,(item,index)=>{
+        //             //     console.log(item,index);
+        //             //     // $('#img').attr('src',`data:`)
+        //             // })
+        //             console.log(result, 'No result??');
+        //             // const b64 = result.imageBinary.data.toString('base64');
+        //             var b64 = arrayBufferToBase64(result);
+        //             const contentType = 'image/jpg';
+        //             $('#imghere').html(`<img src ="data:${contentType};base64,${b64}" alt ="Nothing found"/>`);
+        //         }
+        //     })
+        // })
+        console.log('I am called');
+        maxPicturesDisplaying = 7;
+        for (let i = 0; i < maxPicturesDisplaying; i++) {
+            console.log(i);
+            $('#imghere').append(`<img src ="http://localhost:3000/seeall/${i}" style="height: 275px; width: 200px " alt ="Nothing found"/>`);
+        }
+
     }
+
+    function arrayBufferToBase64(buffer) {
+
+        let binary = '';
+        const bytes = [].slice.call(new Uint8Array(buffer));
+        bytes.forEach((b) => binary += String.fromCharCode(b));
+        return window.btoa(binary);
+    }
+
 </script>
 </body>
 </html>

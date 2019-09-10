@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use('/public',express.static('public'));
+app.use('/public', express.static('public'));
 //Routes
 app.post('/fetchImages', (req, res) => {
     google.list({
@@ -30,30 +30,38 @@ app.post('/fetchImages', (req, res) => {
             show: true
         }
     })
-        .then(function (result) {
+        .then(async function (result) {
 
             console.log('first 15 results from google', result);
             const response = [];
+            let c = 0;
             for (let singleImage of result) {
-                response.push(imageOperation.SaveImageToDB(singleImage));
+                await imageOperation.SaveImageToDB(singleImage, c++).then(success => {
+                    response.push(success);
+                }, err => console.error(err));
             }
-            console.log(response);
-            res.json(response);
+            await console.log(response);
+            await res.json(response);
         }).catch(function (err) {
         console.log('error is this', err);
     });
 
 });
 
-app.get('/getImages',(req,res)=>{
-    res.sendFile('./public/Views/getAllImages.html' ,{root: __dirname});
+app.get('/getImages', (req, res) => {
+    res.sendFile('./public/Views/getAllImages.html', {root: __dirname});
 });
 
-app.get('/seeAll',(req,res)=>{
-    imageOperation.retrieveImage().then(data=>{
-        console.log(data[0].contentType);
-        res.contentType(data[0].contentType);
-        res.send(data[0].imageBinary);
+app.get('/seeAll/:id', (req, res) => {
+    let id = req.params.id;
+    imageOperation.retrieveImage().then(data => {
+        // console.log(data[0]);
+        if (data.length >= id) {
+            res.contentType(data[0].contentType);
+            res.send(data[id].imageBinary);
+        } else {
+            res.send('Nothing');
+        }
     });
 
 });
